@@ -1,4 +1,7 @@
+using API;
 using API.Data;
+using API.Services;
+using API.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,10 @@ builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddCors(); // Cors == Cross-Origin Resource Sharing. Protects browser from shady origins
+// Add the TokenService to the build.
+// AddScoped makes most sense here, because AddTransient would be created/deleted for each use,
+// and AddSingleton would live in memory, consuming resources.
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 
