@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace API;
+namespace API.Controllers;
 
 // Base API Controller
 // Using the ApiController attribute offers functions like validation
