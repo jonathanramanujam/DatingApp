@@ -23,9 +23,7 @@ export class NavComponent
     this.accountService.login(this.model).subscribe({
       // After receiving a response from logging in, navigate to the member list
       // response could be replaced with () or _, since we're not acccessing it in code
-      next: response => this.router.navigateByUrl('/members'),
-      // Send a toastr message for errors
-      error: error => this.toastr.error(error.error)
+      next: response => this.router.navigateByUrl('/members')
     })
   }
 
