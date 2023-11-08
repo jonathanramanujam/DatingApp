@@ -10,16 +10,12 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent implements OnInit
+export class NavComponent
 {
   model: any = {}
 
   constructor(public accountService: AccountService, private router: Router,
     private toastr: ToastrService) { }
-
-  ngOnInit(): void
-  {
-  }
 
   login()
   {

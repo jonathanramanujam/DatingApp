@@ -7,17 +7,13 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit
+export class RegisterComponent
 {
   // @Input() usersFromHomeComponent: any; // @Input allows us to get input from a parent component
   @Output() cancelRegister = new EventEmitter(); // @Output allows us to send an output to a parent component
   model: any = {}
 
   constructor(private accountService: AccountService, private toastr: ToastrService) { }
-
-  ngOnInit(): void
-  {
-  }
 
   register()
   {
